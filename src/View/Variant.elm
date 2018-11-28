@@ -216,13 +216,13 @@ viewVariant : Model -> Html.Html Msg
 viewVariant model =
     case model.variant of
         NotAsked ->
-            text "Initialising."
+            text "Инициализация."
 
         Loading ->
-            text "Loading."
+            text "Загрузка."
 
         Failure err ->
-            text "Error."
+            text "Ошибка."
 
         Success variant ->
             if variant.done then

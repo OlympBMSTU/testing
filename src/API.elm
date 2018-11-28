@@ -20,7 +20,7 @@ getVariantRequest token =
     Http.request
         { method = "GET"
         , headers = mkTokenHeader token
-        , url = "http://localhost:5019/variant/get"
+        , url = "https://olymp.bmstu.ru/api/testing/get"
         , body = Http.emptyBody
         , expect = Http.expectJson decodeVariant
         , timeout = Nothing
@@ -33,7 +33,7 @@ updateVariantRequest token variant =
     Http.request
         { method = "POST"
         , headers = mkTokenHeader token
-        , url = "http://localhost:5019/variant/update"
+        , url = "https://olymp.bmstu.ru/api/testing/update"
         , body = Http.jsonBody (encodeVariantAnswer variant)
         , expect = Http.expectStringResponse << always <| Ok ()
         , timeout = Nothing
@@ -46,7 +46,7 @@ commitVariantRequest token variant =
     Http.request
         { method = "POST"
         , headers = mkTokenHeader token
-        , url = "http://localhost:5019/variant/commit"
+        , url = "https://olymp.bmstu.ru/api/testing/commit"
         , body = Http.jsonBody (encodeVariantAnswer variant)
         , expect = Http.expectStringResponse << always <| Ok ()
         , timeout = Nothing

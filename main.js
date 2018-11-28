@@ -5779,7 +5779,7 @@ var author$project$API$getVariantRequest = function (token) {
 			headers: author$project$API$mkTokenHeader(token),
 			method: 'GET',
 			timeout: elm$core$Maybe$Nothing,
-			url: 'http://localhost:5019/variant/get',
+			url: 'https://olymp.bmstu.ru/api/testing/get',
 			withCredentials: true
 		});
 };
@@ -7068,7 +7068,7 @@ var author$project$API$commitVariantRequest = F2(
 				headers: author$project$API$mkTokenHeader(token),
 				method: 'POST',
 				timeout: elm$core$Maybe$Nothing,
-				url: 'http://localhost:5019/variant/commit',
+				url: 'https://olymp.bmstu.ru/api/testing/commit',
 				withCredentials: true
 			});
 	});
@@ -7122,7 +7122,7 @@ var author$project$API$updateVariantRequest = F2(
 				headers: author$project$API$mkTokenHeader(token),
 				method: 'POST',
 				timeout: elm$core$Maybe$Nothing,
-				url: 'http://localhost:5019/variant/update',
+				url: 'https://olymp.bmstu.ru/api/testing/update',
 				withCredentials: true
 			});
 	});
@@ -9828,12 +9828,12 @@ var author$project$View$Variant$viewVariant = function (model) {
 	var _n0 = model.variant;
 	switch (_n0.$) {
 		case 'NotAsked':
-			return elm$html$Html$text('Initialising.');
+			return elm$html$Html$text('Инициализация.');
 		case 'Loading':
-			return elm$html$Html$text('Loading.');
+			return elm$html$Html$text('Загрузка.');
 		case 'Failure':
 			var err = _n0.a;
-			return elm$html$Html$text('Error.');
+			return elm$html$Html$text('Ошибка.');
 		default:
 			var variant = _n0.a;
 			return variant.done ? author$project$View$Variant$viewDone : A2(
