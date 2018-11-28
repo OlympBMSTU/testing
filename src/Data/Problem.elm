@@ -20,7 +20,8 @@ encodeProblem problem =
 encodeProblemAnswer : Problem -> E.Value
 encodeProblemAnswer problem =
     E.object
-        [ ( "answer", E.string problem.answer )
+        [ ( "url", E.string problem.url )
+        , ( "answer", E.string problem.answer )
         ]
 
 
