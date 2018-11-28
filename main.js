@@ -13164,7 +13164,7 @@ var author$project$View$Variant$problemView = F2(
 										[
 											A2(elm$html$Html$Attributes$style, 'height', '600px'),
 											A2(elm$html$Html$Attributes$style, 'width', '100%'),
-											elm$html$Html$Attributes$src(problem.url)
+											elm$html$Html$Attributes$src('https://olymp.bmstu.ru/exercises/files/' + problem.url)
 										]),
 									_List_Nil)
 								]))
