@@ -316,7 +316,7 @@ problemView i ( problem, valid ) =
                 [ iframe
                     [ style "height" "600px"
                     , style "width" "100%"
-                    , src problem.url
+                    , src "https://olymp.bmstu.ru/exercises/files/" ++ problem.url
                     ]
                     []
                 ]
