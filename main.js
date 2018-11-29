@@ -8517,7 +8517,7 @@ var author$project$Main$viewNavbar = function (model) {
 							rundis$elm_bootstrap$Bootstrap$Navbar$itemLink,
 							_List_fromArray(
 								[
-									elm$html$Html$Attributes$href('https://olymp.bmstu.ru/test-init/')
+									elm$html$Html$Attributes$href('https://olymp.bmstu.ru/testing-init/')
 								]),
 							_List_fromArray(
 								[

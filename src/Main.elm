@@ -108,7 +108,7 @@ viewNavbar model =
                 , text " Тестирование"
                 ]
             |> Navbar.items
-                [ Navbar.itemLink [href "https://olymp.bmstu.ru/test-init/"] [ text "Личный кабинет"]
+                [ Navbar.itemLink [href "https://olymp.bmstu.ru/testing-init/"] [ text "Личный кабинет"]
                 ]
             |> Navbar.view model.navbarState]
 
