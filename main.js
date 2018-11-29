@@ -7673,6 +7673,25 @@ var rundis$elm_bootstrap$Bootstrap$Navbar$config = function (toMsg) {
 			withAnimation: false
 		});
 };
+var rundis$elm_bootstrap$Bootstrap$Navbar$Item = function (a) {
+	return {$: 'Item', a: a};
+};
+var rundis$elm_bootstrap$Bootstrap$Navbar$itemLink = F2(
+	function (attributes, children) {
+		return rundis$elm_bootstrap$Bootstrap$Navbar$Item(
+			{attributes: attributes, children: children});
+	});
+var rundis$elm_bootstrap$Bootstrap$Navbar$items = F2(
+	function (items_, config_) {
+		return A2(
+			rundis$elm_bootstrap$Bootstrap$Navbar$updateConfig,
+			function (conf) {
+				return _Utils_update(
+					conf,
+					{items: items_});
+			},
+			config_);
+	});
 var elm$core$Maybe$map = F2(
 	function (f, maybe) {
 		if (maybe.$ === 'Just') {
@@ -8490,27 +8509,42 @@ var author$project$Main$viewNavbar = function (model) {
 				A2(
 				rundis$elm_bootstrap$Bootstrap$Navbar$view,
 				model.navbarState,
-				A3(
-					rundis$elm_bootstrap$Bootstrap$Navbar$brand,
-					_List_fromArray(
-						[
-							elm$html$Html$Attributes$href('#')
-						]),
+				A2(
+					rundis$elm_bootstrap$Bootstrap$Navbar$items,
 					_List_fromArray(
 						[
 							A2(
-							elm$html$Html$img,
+							rundis$elm_bootstrap$Bootstrap$Navbar$itemLink,
 							_List_fromArray(
 								[
-									elm$html$Html$Attributes$src('/bmstu.png'),
-									elm$html$Html$Attributes$class('d-inline-block align-top'),
-									A2(elm$html$Html$Attributes$style, 'width', '30px')
+									elm$html$Html$Attributes$href('https://olymp.bmstu.ru/test-init/')
 								]),
-							_List_Nil),
-							elm$html$Html$text(' Тестирование')
+							_List_fromArray(
+								[
+									elm$html$Html$text('Личный кабинет')
+								]))
 						]),
-					rundis$elm_bootstrap$Bootstrap$Navbar$withAnimation(
-						rundis$elm_bootstrap$Bootstrap$Navbar$config(author$project$Main$NavbarMsg))))
+					A3(
+						rundis$elm_bootstrap$Bootstrap$Navbar$brand,
+						_List_fromArray(
+							[
+								elm$html$Html$Attributes$href('#')
+							]),
+						_List_fromArray(
+							[
+								A2(
+								elm$html$Html$img,
+								_List_fromArray(
+									[
+										elm$html$Html$Attributes$src('/bmstu.png'),
+										elm$html$Html$Attributes$class('d-inline-block align-top'),
+										A2(elm$html$Html$Attributes$style, 'width', '30px')
+									]),
+								_List_Nil),
+								elm$html$Html$text(' Тестирование')
+							]),
+						rundis$elm_bootstrap$Bootstrap$Navbar$withAnimation(
+							rundis$elm_bootstrap$Bootstrap$Navbar$config(author$project$Main$NavbarMsg)))))
 			]));
 };
 var author$project$View$Variant$CloseModal = {$: 'CloseModal'};
@@ -9836,7 +9870,7 @@ var author$project$View$Variant$viewVariant = function (model) {
 			return elm$html$Html$text('Загрузка.');
 		case 'Failure':
 			var err = _n0.a;
-			return elm$html$Html$text('Ошибка.');
+			return elm$html$Html$text('Ошибка. Возможно у вас нет активных тестов или время вышло. Попробуйте вернуться в личный кабинет');
 		default:
 			var variant = _n0.a;
 			return variant.done ? author$project$View$Variant$viewDone : A2(

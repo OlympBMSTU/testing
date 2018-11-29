@@ -222,7 +222,7 @@ viewVariant model =
             text "Загрузка."
 
         Failure err ->
-            text "Ошибка."
+            text "Ошибка. Возможно у вас нет активных тестов или время вышло. Попробуйте вернуться в личный кабинет"
 
         Success variant ->
             if variant.done then
