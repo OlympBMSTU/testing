@@ -322,14 +322,17 @@ problemView i ( problem, valid ) =
                 ]
             ]
         , Grid.row [ Row.attrs [ Spacing.mb5 ], Row.centerMd ]
-            [ Grid.col [ Col.md12 ]
+            [ Grid.col [ Col.md1 ]
+                [ p [ Spacing.p2 ] [ text "Ответ:" ] ]
+            , Grid.col [ Col.md11 ]
                 [ input
                     [ style "width" "100%"
                     , class classes
                     , onBlur LostFocus
                     , onInput (InputAnswer i)
+                    , value problem.answer 
                     ]
-                    [ text problem.answer ]
+                    [ ]
                 , div
                     [ class "invalid-feedback" ]
                     [ text validateMessage ]

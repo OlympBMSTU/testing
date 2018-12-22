@@ -8555,6 +8555,8 @@ var author$project$View$Variant$InputAnswer = F2(
 var author$project$View$Variant$LostFocus = {$: 'LostFocus'};
 var elm$html$Html$iframe = _VirtualDom_node('iframe');
 var elm$html$Html$input = _VirtualDom_node('input');
+var elm$html$Html$p = _VirtualDom_node('p');
+var elm$html$Html$Attributes$value = elm$html$Html$Attributes$stringProperty('value');
 var elm$html$Html$Events$onBlur = function (msg) {
 	return A2(
 		elm$html$Html$Events$on,
@@ -9386,7 +9388,7 @@ var rundis$elm_bootstrap$Bootstrap$Grid$row = F2(
 			rundis$elm_bootstrap$Bootstrap$Grid$Internal$rowAttributes(options),
 			A2(elm$core$List$map, rundis$elm_bootstrap$Bootstrap$Grid$renderCol, cols));
 	});
-var rundis$elm_bootstrap$Bootstrap$Grid$Internal$Col12 = {$: 'Col12'};
+var rundis$elm_bootstrap$Bootstrap$Grid$Internal$Col1 = {$: 'Col1'};
 var rundis$elm_bootstrap$Bootstrap$Grid$Internal$ColWidth = function (a) {
 	return {$: 'ColWidth', a: a};
 };
@@ -9395,6 +9397,10 @@ var rundis$elm_bootstrap$Bootstrap$Grid$Internal$width = F2(
 		return rundis$elm_bootstrap$Bootstrap$Grid$Internal$ColWidth(
 			A2(rundis$elm_bootstrap$Bootstrap$Grid$Internal$Width, size, count));
 	});
+var rundis$elm_bootstrap$Bootstrap$Grid$Col$md1 = A2(rundis$elm_bootstrap$Bootstrap$Grid$Internal$width, rundis$elm_bootstrap$Bootstrap$General$Internal$MD, rundis$elm_bootstrap$Bootstrap$Grid$Internal$Col1);
+var rundis$elm_bootstrap$Bootstrap$Grid$Internal$Col11 = {$: 'Col11'};
+var rundis$elm_bootstrap$Bootstrap$Grid$Col$md11 = A2(rundis$elm_bootstrap$Bootstrap$Grid$Internal$width, rundis$elm_bootstrap$Bootstrap$General$Internal$MD, rundis$elm_bootstrap$Bootstrap$Grid$Internal$Col11);
+var rundis$elm_bootstrap$Bootstrap$Grid$Internal$Col12 = {$: 'Col12'};
 var rundis$elm_bootstrap$Bootstrap$Grid$Col$md12 = A2(rundis$elm_bootstrap$Bootstrap$Grid$Internal$width, rundis$elm_bootstrap$Bootstrap$General$Internal$MD, rundis$elm_bootstrap$Bootstrap$Grid$Internal$Col12);
 var rundis$elm_bootstrap$Bootstrap$Grid$Internal$RowAttrs = function (a) {
 	return {$: 'RowAttrs', a: a};
@@ -9418,6 +9424,7 @@ var rundis$elm_bootstrap$Bootstrap$Grid$Internal$rowHAlign = F2(
 var rundis$elm_bootstrap$Bootstrap$Grid$Row$centerMd = A2(rundis$elm_bootstrap$Bootstrap$Grid$Internal$rowHAlign, rundis$elm_bootstrap$Bootstrap$General$Internal$MD, rundis$elm_bootstrap$Bootstrap$General$Internal$Center);
 var rundis$elm_bootstrap$Bootstrap$Utilities$Spacing$mb5 = elm$html$Html$Attributes$class('mb-5');
 var rundis$elm_bootstrap$Bootstrap$Utilities$Spacing$mt5 = elm$html$Html$Attributes$class('mt-5');
+var rundis$elm_bootstrap$Bootstrap$Utilities$Spacing$p2 = elm$html$Html$Attributes$class('p-2');
 var author$project$View$Variant$problemView = F2(
 	function (i, _n0) {
 		var problem = _n0.a;
@@ -9471,7 +9478,22 @@ var author$project$View$Variant$problemView = F2(
 							A2(
 							rundis$elm_bootstrap$Bootstrap$Grid$col,
 							_List_fromArray(
-								[rundis$elm_bootstrap$Bootstrap$Grid$Col$md12]),
+								[rundis$elm_bootstrap$Bootstrap$Grid$Col$md1]),
+							_List_fromArray(
+								[
+									A2(
+									elm$html$Html$p,
+									_List_fromArray(
+										[rundis$elm_bootstrap$Bootstrap$Utilities$Spacing$p2]),
+									_List_fromArray(
+										[
+											elm$html$Html$text('Ответ:')
+										]))
+								])),
+							A2(
+							rundis$elm_bootstrap$Bootstrap$Grid$col,
+							_List_fromArray(
+								[rundis$elm_bootstrap$Bootstrap$Grid$Col$md11]),
 							_List_fromArray(
 								[
 									A2(
@@ -9482,12 +9504,10 @@ var author$project$View$Variant$problemView = F2(
 											elm$html$Html$Attributes$class(classes),
 											elm$html$Html$Events$onBlur(author$project$View$Variant$LostFocus),
 											elm$html$Html$Events$onInput(
-											author$project$View$Variant$InputAnswer(i))
+											author$project$View$Variant$InputAnswer(i)),
+											elm$html$Html$Attributes$value(problem.answer)
 										]),
-									_List_fromArray(
-										[
-											elm$html$Html$text(problem.answer)
-										])),
+									_List_Nil),
 									A2(
 									elm$html$Html$div,
 									_List_fromArray(
@@ -9888,7 +9908,6 @@ var author$project$View$Variant$viewVariant = function (model) {
 						])));
 	}
 };
-var elm$html$Html$p = _VirtualDom_node('p');
 var elm$html$Html$Events$onClick = function (msg) {
 	return A2(
 		elm$html$Html$Events$on,
